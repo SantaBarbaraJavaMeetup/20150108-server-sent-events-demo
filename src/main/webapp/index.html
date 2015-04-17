@@ -1,0 +1,27 @@
+<!doctype html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+<div id="txtsse">
+
+</div>
+
+</body>
+
+<script>
+
+    var elem = document.getElementById("txtsse");
+
+    var evtSource = new EventSource("http://localhost:8080/sse");
+
+    evtSource.addEventListener("date", function(e) {
+       elem.innerHTML += "<p>" + e.data + "</p>";
+    });
+
+</script>
+
+</html>
